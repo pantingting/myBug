@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>MyBug</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../lib/jquery/jquery.cookie.min.js"></script>
+    <script src="../js/params.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../lib/gizwits/gizwits_ws_0.3.0.min.js"></script>
+</head>
+<body>
+    <div class=" height-100 bg-img">
+        <div class=" height-100">
+            <div class="page__bd height-100">
+                <div class="weui-tab height-100">
+                    <div class="weui-tab__panel login-backImg" style="padding: 16px 0 20px 0">
+                        <div class="personal-center">
+                            <a onclick="location.href='my.html?timestamp=' + (new Date()).getTime()"><img src="../img/000.png" alt=""></a>
+                        </div>
+                        <div class="web_ui_box center">
+                            <div class="web_ui_item device-state">
+                                <img src="../img/008.png" alt="">
+                                <p>
+                                    <span id="leftFired"></span> | <span id="rightFired"></span>
+                                </p>
+                            </div>
+                            <div class="web_ui_item device-state">
+                                <img src="../img/014.png" alt="">
+                                <p id="speedStatus"></p>
+                            </div>
+                            <div class="right-menu" onclick="$('.device-detail').removeClass('HideInfo hideInfo').addClass('display-w-b ShowInfo')">
+                                <img src="../img/010.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="device-detail animated-info hideInfo web_ui_box center">
+                            <div class="btn-close">
+                                <img src="../img/010a.png" alt="">
+                            </div>
+                            <div class="user-records web_ui_item">
+                                <div class="records-item">
+                                    <div>
+                                        <img src="../img/012.png" alt="">
+                                    </div>
+                                    <div>左点火开关次数：</div>
+                                    <div style="color: #f8d719;" data-name="ignition_left" id="leftFiredNum"></div>
+                                </div>
+                                <div class="records-item">
+                                    <div>
+                                        <img src="../img/012.png" alt="">
+                                    </div>
+                                    <div>右点微动关次数：</div>
+                                    <div style="color: #f8d719;" data-name="ignition_right" id="rightFiredNum"></div>
+                                </div>
+                                <div class="records-item">
+                                    <div>
+                                        <img src="../img/016.png" alt="">
+                                    </div>
+                                    <div>左感应针已运行：</div>
+                                    <div style="color: #f9310a;" data-name="induction_left" id="leftShotUsed"></div>
+                                </div>
+                                <div class="records-item">
+                                    <div>
+                                        <img src="../img/016.png" alt="">
+                                    </div>
+                                    <div>右感应针已运行：</div>
+                                    <div style="color: #f9310a;" data-name="induction_right" id="rightShotUsed"></div>
+                                </div>
+                                <div class="records-item">
+                                    <div>
+                                        <img src="../img/014.png" alt="">
+                                    </div>
+                                    <div>风机已运行：</div>
+                                    <div style="color: #82d6f8;" data-name="speed" id="fanUsed"></div>
+                                </div>
+                                                            
+                            </div>
+                        </div>
+
+                        <div class="remind-box">
+                            <div class="btn-repair">
+                                <a onclick="location.href='repair.html?timestamp=' + (new Date()).getTime()"><img src="../img/011.png" alt=""></a>
+                            </div>
+                            <div class="title">
+                                <div class="line"></div>
+                                <div>告警提醒</div>
+                                <div class="line"></div>
+                            </div>
+                            <div data-name="alarmList">
+                                <!--<div class="remind-content">
+                                    <span>03-25 15:10</span>
+                                    <span>设备3554发生点火开关故障</span>
+                                </div>
+                                <div class="remind-content">
+                                    <span>03-25 15:10</span>
+                                    <span>设备3554发生点火开关故障</span>
+                                </div>-->
+
+                                <!--<div class="year">2017</div>
+                                <div class="remind-content">
+                                    <span>03-25 15:10</span>
+                                    <span>设备3554发生点火开关故障</span>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var mac = null;
+
+        var gizwitsws = null;
+        // 设备信息
+        var devicesInfo = null;
+        var userInfo = JSON.parse(localStorage.getItem("CH_UserInfo"));
+        $(function () {
+
+            loading.show();
+
+            if (userInfo == null || localStorage.getItem("loginName") == null || localStorage.getItem("mainOpenId") == null) {
+                location.href = "login.html";
+                return;
+            }
+            renderAlarmInfo();
+
+            $('.btn-close').click(() => {
+                $('.device-detail').removeClass('display-w-b ShowInfo').addClass("HideInfo");
+            });
+
+        });
+
+        function InitializationConnection() {
+            var data = {
+                apiHost: 'api.gizwits.com',
+                commType: 'attrs_v4',
+                wechatOpenId: localStorage.getItem("mainOpenId"),
+                gizwitsAppId: '852af2adf0f44bf595ab1085875dc259'
+            }
+
+            gizwitsws = new GizwitsWS(data.apiHost, data.wechatOpenId, data.gizwitsAppId, data.commType);
+
+            gizwitsws.onInit = onInit;
+            gizwitsws.onConnected = onConnected;
+            gizwitsws.onOnlineStatusChanged = onOnlineStatusChanged;
+            gizwitsws.onReceivedRaw = onReceivedRaw;
+            gizwitsws.onReceivedAttrs = onReceivedAttrs;
+            gizwitsws.onError = onError;
+
+            console.log(gizwitsws);
+
+            // 使用GizwitsWS.init()获取绑定列表
+            gizwitsws.init();
+        }
+
+        function onInit(devices) {
+            console.log("line(165)",devices);
+            if (devices.length == 0) {
+                dialog.tip("没有绑定的设备");
+            } else {
+                if (mac == null) {
+                    return dialog.alert("提示", "获取mac地址失败,请重新登录!", function () {
+                        location.href = "login.html";
+                    });
+                }
+                var obj = devices.find(function (item) {
+                    return item.mac.toUpperCase() == mac.toUpperCase();
+                });
+
+                if (!obj) {
+                    loading.hide();
+                    return dialog.alert("提示", "未找到对应的设备,请重新登录!", function () {
+                        location.href = "login.html";
+                    });
+                }
+
+                localStorage.devicesInfo = JSON.stringify(obj);
+                devicesInfo = obj;
+
+                // 创建websocket连接
+                if (devicesInfo != null) {
+                    if (!devicesInfo.is_online) {
+                        loading.hide();
+                        dialog.tip("设备未在线");
+                        return getHistoryData();
+                    }
+                    gizwitsws.connect(devicesInfo.did);
+                }
+            }
+        }
+
+        function onConnected(did) {
+            // console.log("与设备:" + did + "连接成功!");
+            gizwitsws.read(did, null);
+        }
+
+        function onOnlineStatusChanged(value) {
+            console.log("设备上下线通知，did=" + value.did);
+            console.log("设备上下线通知，is_online=" + value.is_online);
+        }
+
+        function onReceivedRaw(value) {
+            var str = "收到设备" + value.did + "的Raw: [";
+            for (var i = 0; i < value.raw.length; i++) {
+                str = str + value.raw[i] + ",";
+            }
+            str = str.substr(0, str.length - 1) + "]";
+            console.log(str);
+        }
+
+        function onReceivedAttrs(value) {
+            //console.log('line(202)',value);
+            var str = "收到设备" + value.did + "的Attrs: ";
+            for (var key in value.attrs) {
+                str = str + key + ":" + value.attrs[key] + "; ";
+            }
+            //console.log(str);
+            // 如果获取到了设备数据就显示设备返回的数据
+            if (value != null && value != undefined && value != '') {
+                loading.hide();
+                $('[data-name="ignition_left"]').text(value.attrs.DHZ_L + " 次");
+                $('[data-name="ignition_right"]').text(value.attrs.DHZ_R + " 次");
+                $('[data-name="induction_left"]').text(value.attrs.GYZ_L + " 小时");
+                $('[data-name="induction_right"]').text(value.attrs.GYZ_R + " 小时");
+                $('[data-name="speed"]').text(value.attrs.SPEED_T + " 小时");
+                $("#leftFired").text("左：" + (value.attrs.FIRE_L_DOING == false ? "关" : "开"));
+                $("#rightFired").text("右：" + (value.attrs.FIRE_R_DOING == false ? "关" : "开"));
+                $("#speedStatus").text((value.attrs.SPEED_DOING == false ? "关" : "开"));
+            } else {
+                getHistoryData();
+            }
+        }
+
+        // 读取设备使用数据
+        function getHistoryData() {
+            // 否则调用接口查询库里的数据
+            $.ajax({
+                url: apiUrl + '/getHistoryData',
+                type: 'POST',
+                data: JSON.stringify({
+                    mainOpenId: localStorage.getItem("mainOpenId")
+                }),
+                contentType: "application/json",
+                success: function (res) {
+                    if (res.success) {
+                        $('[data-name="ignition_left"]').text((res.data.historyData.length > 0 ? res.data.historyData[0].leftFiredNum : 0) + " 次");
+                        $('[data-name="ignition_right"]').text((res.data.historyData.length > 0 ? res.data.historyData[0].rightFiredNum : 0) + " 次");
+                        $('[data-name="induction_left"]').text((res.data.historyData.length > 0 ? res.data.historyData[0].leftShotUsed : 0) + " 小时");
+                        $('[data-name="induction_right"]').text((res.data.historyData.length > 0 ? res.data.historyData[0].rightShotUsed : 0) + " 小时");
+                        $('[data-name="speed"]').text((res.data.historyData.length > 0 ? res.data.historyData[0].fanUsed : 0) + " 小时");
+                        $("#leftFired").text("左：关");
+                        $("#rightFired").text("右：关");
+                        $("#speedStatus").text("关");
+                    } else {
+                        dialog.alert("提示", "获取使用数据失败,点击确认重新登录", () => {
+                            location.href = "login.html";
+                        });
+                    }
+                }
+            });
+        }
+
+        function onError(value) {
+            console.log("onError: " + value.toString());
+        }
+
+        // 告警提醒
+        function renderAlarmInfo() {
+            $.ajax({
+                url: apiUrl + '/getAlarmInfo',
+                type: 'POST',
+                data: JSON.stringify({
+                    openId: userInfo.openId,
+                    mainOpenId: localStorage.getItem("mainOpenId")
+                }),
+                contentType: "application/json",
+                success: function (res) {
+                    if (res.success) {
+                        mac = res.data.mac;
+                        InitializationConnection();
+
+                        if (res.data.isNullOrEmptydeviceId) return location.href = "login.html";
+                        var html = "<div style='padding-top: 15px;'>您的设备一切正常</div>";
+                        if (res.data.alarmInfo.length > 0) {
+                            html = '';
+                            var year = JSON.stringify((new Date()).getFullYear());
+                            var lastYear = "";
+                            res.data.alarmInfo.forEach((item) => {
+                                if (item.years != year) {
+                                    if (item.years != lastYear) {
+                                        html += '<div class="year">' + item.years + '</div>';
+                                    }
+                                    lastYear = item.years;
+                                }
+                                html += '<div class="remind-content">';
+                                html += '<span>' + item.alarmDTM + '</span>';
+                                html += '<span> 设备' + item.alarmType + '</span>';
+                                html += '</div>';
+                            });
+                        }
+                        $('[data-name="alarmList"]').html(html);
+                    } else {
+                        loading.hide();
+                        if (res.errCode == "login") {
+                            dialog.alert("提示", res.message, function () {
+                                location.href = "login.html";
+                            });
+                        } else {
+                            dialog.alert("提示", res.message);
+                        }
+                    }
+                },
+                error: function () {
+                    loading.hide();
+                }
+            })
+        }
+    </script>
+</body>
+</html>

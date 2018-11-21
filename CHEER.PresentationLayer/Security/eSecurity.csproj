@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4770D9DB-598F-403F-9840-847887199AAB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CHEER.PresentationLayer.Security</RootNamespace>
+    <AssemblyName>CHEER.PresentationLayer.Security</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CHEER.BusinessLayer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\CHEER.BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="CHEER.CommonLayer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\CHEER.CommonLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="CHEER.DataAccessLayer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\CHEER.DataAccessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="CHEER.Platform, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\CHEER.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="CheerUI, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\CheerUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountAllotPage.aspx.cs">
+      <DependentUpon>AccountAllotPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountAllotPage.aspx.designer.cs">
+      <DependentUpon>AccountAllotPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllotLookPage.aspx.cs">
+      <DependentUpon>AllotLookPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllotLookPage.aspx.designer.cs">
+      <DependentUpon>AllotLookPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllotTabPage.aspx.cs">
+      <DependentUpon>AllotTabPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllotTabPage.aspx.designer.cs">
+      <DependentUpon>AllotTabPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlotSeletlPage.aspx.cs">
+      <DependentUpon>AlotSeletlPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlotSeletlPage.aspx.designer.cs">
+      <DependentUpon>AlotSeletlPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\AbstractMaintainPage.aspx.cs">
+      <DependentUpon>AbstractMaintainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\AbstractMaintainPage.aspx.designer.cs">
+      <DependentUpon>AbstractMaintainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\BchEditPage.aspx.cs">
+      <DependentUpon>BchEditPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\BchEditPage.aspx.designer.cs">
+      <DependentUpon>BchEditPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\BchExtendPage.aspx.cs">
+      <DependentUpon>BchExtendPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\BchExtendPage.aspx.designer.cs">
+      <DependentUpon>BchExtendPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\BchExtendSelectPage.aspx.cs">
+      <DependentUpon>BchExtendSelectPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\BchExtendSelectPage.aspx.designer.cs">
+      <DependentUpon>BchExtendSelectPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\BranchDisTab.aspx.cs">
+      <DependentUpon>BranchDisTab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\BranchDisTab.aspx.designer.cs">
+      <DependentUpon>BranchDisTab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\BranchDisTree.aspx.cs">
+      <DependentUpon>BranchDisTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\BranchDisTree.aspx.designer.cs">
+      <DependentUpon>BranchDisTree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\BranchMaintainpage.aspx.cs">
+      <DependentUpon>BranchMaintainpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\BranchMaintainpage.aspx.designer.cs">
+      <DependentUpon>BranchMaintainpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\BranchSearch.aspx.cs">
+      <DependentUpon>BranchSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\BranchSearch.aspx.designer.cs">
+      <DependentUpon>BranchSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\MultiPersonSelectPage.aspx.cs">
+      <DependentUpon>MultiPersonSelectPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\MultiPersonSelectPage.aspx.designer.cs">
+      <DependentUpon>MultiPersonSelectPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\PackageMaintainPage.aspx.cs">
+      <DependentUpon>PackageMaintainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\PackageMaintainPage.aspx.designer.cs">
+      <DependentUpon>PackageMaintainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSet\PersonMaintainPage.aspx.cs">
+      <DependentUpon>PersonMaintainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageSet\PersonMaintainPage.aspx.designer.cs">
+      <DependentUpon>PersonMaintainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecuritySet\RoleSecMaintainPage.aspx.cs">
+      <DependentUpon>RoleSecMaintainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\RoleSecMaintainPage.aspx.designer.cs">
+      <DependentUpon>RoleSecMaintainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecuritySet\SecFieldInforPage.aspx.cs">
+      <DependentUpon>SecFieldInforPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\SecFieldInforPage.aspx.designer.cs">
+      <DependentUpon>SecFieldInforPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecuritySet\SecFieldMaintainPage.aspx.cs">
+      <DependentUpon>SecFieldMaintainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\SecFieldMaintainPage.aspx.designer.cs">
+      <DependentUpon>SecFieldMaintainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecuritySet\SecFunInforPage.aspx.cs">
+      <DependentUpon>SecFunInforPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\SecFunInforPage.aspx.designer.cs">
+      <DependentUpon>SecFunInforPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecuritySet\SecModuleInforPage.aspx.cs">
+      <DependentUpon>SecModuleInforPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\SecModuleInforPage.aspx.designer.cs">
+      <DependentUpon>SecModuleInforPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecuritySet\SecurityInforPage.aspx.cs">
+      <DependentUpon>SecurityInforPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\SecurityInforPage.aspx.designer.cs">
+      <DependentUpon>SecurityInforPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecuritySet\SecurityMaintainPage.aspx.cs">
+      <DependentUpon>SecurityMaintainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\SecurityMaintainPage.aspx.designer.cs">
+      <DependentUpon>SecurityMaintainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecuritySet\SecuritySetPage.aspx.cs">
+      <DependentUpon>SecuritySetPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\SecuritySetPage.aspx.designer.cs">
+      <DependentUpon>SecuritySetPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecuritySet\SecuritySetTabPage.aspx.cs">
+      <DependentUpon>SecuritySetTabPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\SecuritySetTabPage.aspx.designer.cs">
+      <DependentUpon>SecuritySetTabPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecuritySet\UserSecMaintainPage.aspx.cs">
+      <DependentUpon>UserSecMaintainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecuritySet\UserSecMaintainPage.aspx.designer.cs">
+      <DependentUpon>UserSecMaintainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityView\SecurityViewPage.aspx.cs">
+      <DependentUpon>SecurityViewPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecurityView\SecurityViewPage.aspx.designer.cs">
+      <DependentUpon>SecurityViewPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityView\SecurityViewRolePage.aspx.cs">
+      <DependentUpon>SecurityViewRolePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecurityView\SecurityViewRolePage.aspx.designer.cs">
+      <DependentUpon>SecurityViewRolePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityView\SecurityViewTabPage.aspx.cs">
+      <DependentUpon>SecurityViewTabPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecurityView\SecurityViewTabPage.aspx.designer.cs">
+      <DependentUpon>SecurityViewTabPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityView\SecurityViewUserPage.aspx.cs">
+      <DependentUpon>SecurityViewUserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecurityView\SecurityViewUserPage.aspx.designer.cs">
+      <DependentUpon>SecurityViewUserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeniorAccountAllotPage.aspx.cs">
+      <DependentUpon>SeniorAccountAllotPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeniorAccountAllotPage.aspx.designer.cs">
+      <DependentUpon>SeniorAccountAllotPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\MailMsgSetting.aspx.cs">
+      <DependentUpon>MailMsgSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\MailMsgSetting.aspx.designer.cs">
+      <DependentUpon>MailMsgSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\SubServicesEditPage.aspx.cs">
+      <DependentUpon>SubServicesEditPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\SubServicesEditPage.aspx.designer.cs">
+      <DependentUpon>SubServicesEditPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\SubServicesMaterial.aspx.cs">
+      <DependentUpon>SubServicesMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\SubServicesMaterial.aspx.designer.cs">
+      <DependentUpon>SubServicesMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperWork\RoleCopyPage.aspx.cs">
+      <DependentUpon>RoleCopyPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperWork\RoleCopyPage.aspx.designer.cs">
+      <DependentUpon>RoleCopyPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperWork\RoleCopyTabPage.aspx.cs">
+      <DependentUpon>RoleCopyTabPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperWork\RoleCopyTabPage.aspx.designer.cs">
+      <DependentUpon>RoleCopyTabPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperWork\RoleCopyToRolePage.aspx.cs">
+      <DependentUpon>RoleCopyToRolePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperWork\RoleCopyToRolePage.aspx.designer.cs">
+      <DependentUpon>RoleCopyToRolePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperWork\RoleSelectPage.aspx.cs">
+      <DependentUpon>RoleSelectPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperWork\RoleSelectPage.aspx.designer.cs">
+      <DependentUpon>RoleSelectPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperWork\UserCopyToUserPage.aspx.cs">
+      <DependentUpon>UserCopyToUserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperWork\UserCopyToUserPage.aspx.designer.cs">
+      <DependentUpon>UserCopyToUserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperWork\UserSelectPage.aspx.cs">
+      <DependentUpon>UserSelectPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperWork\UserSelectPage.aspx.designer.cs">
+      <DependentUpon>UserSelectPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\RoleAddPage.aspx.cs">
+      <DependentUpon>RoleAddPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\RoleAddPage.aspx.designer.cs">
+      <DependentUpon>RoleAddPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\RoleEditPage.aspx.cs">
+      <DependentUpon>RoleEditPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\RoleEditPage.aspx.designer.cs">
+      <DependentUpon>RoleEditPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\RoleMaintainPage.aspx.cs">
+      <DependentUpon>RoleMaintainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\RoleMaintainPage.aspx.designer.cs">
+      <DependentUpon>RoleMaintainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\RoleSelectPage.aspx.cs">
+      <DependentUpon>RoleSelectPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\RoleSelectPage.aspx.designer.cs">
+      <DependentUpon>RoleSelectPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\RoleTabPage.aspx.cs">
+      <DependentUpon>RoleTabPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\RoleTabPage.aspx.designer.cs">
+      <DependentUpon>RoleTabPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\RoleUserPage.aspx.cs">
+      <DependentUpon>RoleUserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\RoleUserPage.aspx.designer.cs">
+      <DependentUpon>RoleUserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\SecurityTabPage.aspx.cs">
+      <DependentUpon>SecurityTabPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\SecurityTabPage.aspx.designer.cs">
+      <DependentUpon>SecurityTabPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\UserAddPage.aspx.cs">
+      <DependentUpon>UserAddPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\UserAddPage.aspx.designer.cs">
+      <DependentUpon>UserAddPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\UserEditPage.aspx.cs">
+      <DependentUpon>UserEditPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\UserEditPage.aspx.designer.cs">
+      <DependentUpon>UserEditPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\UserMaintainPage.aspx.cs">
+      <DependentUpon>UserMaintainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\UserMaintainPage.aspx.designer.cs">
+      <DependentUpon>UserMaintainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\UserRolePage.aspx.cs">
+      <DependentUpon>UserRolePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\UserRolePage.aspx.designer.cs">
+      <DependentUpon>UserRolePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\UserSelectPage.aspx.cs">
+      <DependentUpon>UserSelectPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\UserSelectPage.aspx.designer.cs">
+      <DependentUpon>UserSelectPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAndRole\UserTabPage.aspx.cs">
+      <DependentUpon>UserTabPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAndRole\UserTabPage.aspx.designer.cs">
+      <DependentUpon>UserTabPage.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CHEER.PresentationLayer.csproj">
+      <Project>{52fffe2c-07d3-4bd3-8a77-4e1c950e7e9c}</Project>
+      <Name>CHEER.PresentationLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccountAllotPage.aspx" />
+    <Content Include="AllotLookPage.aspx" />
+    <Content Include="AllotTabPage.aspx" />
+    <Content Include="AlotSeletlPage.aspx" />
+    <Content Include="PackageSet\AbstractMaintainPage.aspx" />
+    <Content Include="PackageSet\BchEditPage.aspx" />
+    <Content Include="PackageSet\BchExtendPage.aspx" />
+    <Content Include="PackageSet\BchExtendSelectPage.aspx" />
+    <Content Include="PackageSet\BranchDisTab.aspx" />
+    <Content Include="PackageSet\BranchDisTree.aspx" />
+    <Content Include="PackageSet\BranchMaintainpage.aspx" />
+    <Content Include="PackageSet\BranchSearch.aspx" />
+    <Content Include="PackageSet\MultiPersonSelectPage.aspx" />
+    <Content Include="PackageSet\PackageMaintainPage.aspx" />
+    <Content Include="PackageSet\PersonMaintainPage.aspx" />
+    <Content Include="SecuritySet\RoleSecMaintainPage.aspx" />
+    <Content Include="SecuritySet\SecFieldInforPage.aspx" />
+    <Content Include="SecuritySet\SecFieldMaintainPage.aspx" />
+    <Content Include="SecuritySet\SecFunInforPage.aspx" />
+    <Content Include="SecuritySet\SecModuleInforPage.aspx" />
+    <Content Include="SecuritySet\SecurityInforPage.aspx" />
+    <Content Include="SecuritySet\SecurityMaintainPage.aspx" />
+    <Content Include="SecuritySet\SecuritySetPage.aspx" />
+    <Content Include="SecuritySet\SecuritySetTabPage.aspx" />
+    <Content Include="SecuritySet\UserSecMaintainPage.aspx" />
+    <Content Include="SecurityView\SecurityViewPage.aspx" />
+    <Content Include="SecurityView\SecurityViewRolePage.aspx" />
+    <Content Include="SecurityView\SecurityViewTabPage.aspx" />
+    <Content Include="SecurityView\SecurityViewUserPage.aspx" />
+    <Content Include="SeniorAccountAllotPage.aspx" />
+    <Content Include="Services\MailMsgSetting.aspx" />
+    <Content Include="Services\SubServicesEditPage.aspx" />
+    <Content Include="Services\SubServicesMaterial.aspx" />
+    <Content Include="SuperWork\RoleCopyPage.aspx" />
+    <Content Include="SuperWork\RoleCopyTabPage.aspx" />
+    <Content Include="SuperWork\RoleCopyToRolePage.aspx" />
+    <Content Include="SuperWork\RoleSelectPage.aspx" />
+    <Content Include="SuperWork\UserCopyToUserPage.aspx" />
+    <Content Include="SuperWork\UserSelectPage.aspx" />
+    <Content Include="UserAndRole\RoleAddPage.aspx" />
+    <Content Include="UserAndRole\RoleEditPage.aspx" />
+    <Content Include="UserAndRole\RoleMaintainPage.aspx" />
+    <Content Include="UserAndRole\RoleSelectPage.aspx" />
+    <Content Include="UserAndRole\RoleTabPage.aspx" />
+    <Content Include="UserAndRole\RoleUserPage.aspx" />
+    <Content Include="UserAndRole\SecurityTabPage.aspx" />
+    <Content Include="UserAndRole\UserAddPage.aspx" />
+    <Content Include="UserAndRole\UserEditPage.aspx" />
+    <Content Include="UserAndRole\UserMaintainPage.aspx" />
+    <Content Include="UserAndRole\UserRolePage.aspx" />
+    <Content Include="UserAndRole\UserSelectPage.aspx" />
+    <Content Include="UserAndRole\UserTabPage.aspx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56507</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56503/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

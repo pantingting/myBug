@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>绑定设备</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/params.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/DeviceBind.js"></script>
+    <script src="../lib/qrCode/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container height-100">
+        <div class="page height-100">
+            <div class="page__bd height-100">
+                <div class="weui-tab height-100">
+                    <div class="weui-tab__panel">
+                        <div class="bind-remind">
+                            <img src="../img/005.png" alt="">
+                            <div class="p-t-20">请在下方输入框内输入设备码</div>
+                            <div class="p-t-10">从而绑定设备</div>
+                        </div>
+                        <div class="weui-cells">
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">设备码：</label></div>
+                                <div class="weui-cell__bd">
+                                    <input class="weui-input" type="text" id="deviceCode" name="code" value="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn-footer btn-hover" onclick="DeviceBind()">绑 定</div>
+                    </div>
+
+                    <div class="qrcode-box" style="display:block">
+                        <div class="code-mask"></div>
+                        <img id="qrcode" src="../img/031.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="text" style="display:none" id="loginName" name="loginName"  value=""/>
+    <script> 
+    </script>
+</body>
+</html>

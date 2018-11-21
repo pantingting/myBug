@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<SQLStringContainer>
+	<ePersonnel.UpdateBLOBFile>Update PSNBLOBFILE Set VALUE = @VALUE Where BLOBFILEID = @BLOBFILEID</ePersonnel.UpdateBLOBFile>
+	<ePersonnel.CreatePersonPhoto>Insert Into PSNPERSONPHOTO (PHOTOID,PERSONID,PHOTOVALUE,SAVETIME,PHOTOTYPE) VALUES(@PHOTOID,@PERSONID,@PHOTOVALUE,@SAVETIME,@PHOTOTYPE)</ePersonnel.CreatePersonPhoto>
+	<ePersonnel.DeletePersonPhoto>Delete From PSNPERSONPHOTO Where PHOTOID = @PHOTOID</ePersonnel.DeletePersonPhoto>
+	<ePersonnel.SelectPersonPhoto>Select * From PSNPERSONPHOTO Where PHOTOID = @PHOTOID</ePersonnel.SelectPersonPhoto>
+	<ePersonnel.SelectPersonPhotoInfor>Select * From PSNPERSONPHOTO Where PERSONID = @PERSONID AND SAVETIME=@SAVETIME</ePersonnel.SelectPersonPhotoInfor>
+</SQLStringContainer>

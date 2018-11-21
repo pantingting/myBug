@@ -1,0 +1,121 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>一键报修</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/02-1-repair.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/repair.js"></script>
+    <style>
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form enctype="multipart/form-data">
+        <div class="container height-100">
+            <div class="page height-100">
+                <div class="type">
+                    <h3>请选择故障类型:</h3>
+                    <div class="nav">
+                        <div>左点火开关故障</div>
+                        <div>右点火开关故障</div>
+                        <div>左感应针故障</div>
+                        <div>右感应针故障</div>
+                        <div>风机故障</div>
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <div class="fault">
+                    <h3>上传故障图片:</h3>
+                    <ul class="list list-pic">
+                        <li>
+                            <input type="file" class="filepath" accept="image/*" name="filepath" />
+                            <span class="close">X</span>
+                            <img src="../img/018.png" class="img1" />
+                            <img src="" class="img2" />
+                        </li>
+                        <li>
+                            <input type="file" class="filepath none" accept="image/*" name="filepath" />
+                            <span class="close">X</span>
+                            <img src="../img/018.png" class="img1" />
+                            <img src="" class="img2" />
+                        </li>
+                        <li>
+                            <input type="file" class="filepath none" accept="image/*" name="filepath" />
+                            <span class="close">X</span>
+                            <img src="../img/018.png" class="img1" />
+                            <img src="" class="img2" />
+                        </li>
+
+                        <span class="num">1~3张</span>
+                    </ul>
+                </div>
+                <div class="hr"></div>
+                <div class="fault">
+                    <h3>上传故障视频:</h3>
+                    <ul class="list upload-video">
+                        <li>
+                            <input type="file" class="filepath" accept="video/*" name="filepath" />
+                            <span class="close">X</span>
+                            <img src="../img/018.png" class="img1" />
+                            <!--<video class="video-source img2" controls style="object-fit:fill" webkit-playsinline="true" x-webkit-airplay="true" playsinline="true" x5-video-player-type="h5" x5-video-orientation="h5" x5-video-player-fullscreen="true" preload="auto">
+                                <cover-view class="controls">
+                                    <cover-image class="img2" src="" />
+                                </cover-view>
+                            </video>-->
+                            <video class="img2"></video>
+                            <canvas style="display:none"></canvas>
+                        </li>
+                        <li>
+                            <input type="file" class="filepath none" accept="video/*" name="filepath" />
+                            <span class="close">X</span>
+                            <img src="../img/018.png" class="img1" />
+                            <!--<video class="video-source img2" controls style="object-fit:fill" webkit-playsinline="true" x-webkit-airplay="true" playsinline="true" x5-video-player-type="h5" x5-video-orientation="h5" x5-video-player-fullscreen="true" preload="auto">
+                                <cover-view class="controls">
+                                    <cover-image class="img2" src="" />
+                                </cover-view>
+                            </video>-->
+                            <video class="img2"></video>
+                            <canvas style="display:none"></canvas>
+                        </li>
+                        <li>
+                            <input type="file" class="filepath none" accept="video/*" name="filepath" />
+                            <span class="close">X</span>
+                            <img src="../img/018.png" class="img1" />
+                            <!--<video class="video-source img2" controls style="object-fit:fill" webkit-playsinline="true" x-webkit-airplay="true" playsinline="true" x5-video-player-type="h5" x5-video-orientation="h5" x5-video-player-fullscreen="true" preload="auto">
+                                <cover-view class="controls">
+                                    <cover-image class="img2" src="" />
+                                </cover-view>
+                            </video>-->
+                            <!--<video class="video-js vjs-default-skin img2"
+                                   controls preload="auto" width="640" height="264"
+                                   poster="../img/001.png"
+                                   data-setup='{"example_option":true}'>
+                                <source src="http://video-js.zencoder.com/oceans-clip.mp4" type="video/mp4"/>
+                            </video>-->
+                            <video class="img2"></video>
+                            <canvas style="display:none"></canvas>
+                        </li>
+                        <span class="num">1~3个</span>
+                    </ul>
+
+                </div>
+                <div class="btn" onclick="submitRepairInfo()">确认提交</div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

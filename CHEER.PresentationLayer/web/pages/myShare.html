@@ -1,0 +1,85 @@
+﻿ll<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>解除绑定</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/03-9-remove-share.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/myShare.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="page">
+            <div class="bg-grey height-100" style="overflow: auto;">
+
+                <div class="weui-panel">
+                    <div class="weui-panel__bd">
+                        <div class="weui-media-box weui-media-box_small-appmsg" id="shareUser">
+                            <!--<a class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__hd">
+                                    <img src="../img/027.png" alt="">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <p class="weui-media-box__title">飞飞</p>
+                                </div>
+                                <div class="weui-media-box__ft bd-record">
+                                    <p class="bd-remove">解除分享</p>
+                                    <p class="bd-remove m-t-5">授权登录</p>
+                                </div>
+                            </a>-->
+                            
+                            <!--<a class="weui-media-box weui-media-box_appmsg" href="">
+                                <div class="weui-media-box__hd">
+                                    <img src="../img/027.png" alt="">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <p class="weui-media-box__title">悦悦小番茄</p>
+                                </div>
+                                <div class="weui-media-box__bd bd-record">
+                                    <p class="bd-remove">解除分享</p>
+                                </div>
+                            </a>
+                            <a class="weui-media-box weui-media-box_appmsg" href="">
+                                <div class="weui-media-box__hd">
+                                    <img src="../img/027.png" alt="">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <p class="weui-media-box__title">俊俊</p>
+                                </div>
+                                <div class="weui-media-box__bd bd-record">
+                                    <p class="bd-remove">解除分享</p>
+                                </div>
+                            </a>-->
+
+
+                            <!-- 遮罩层 -->
+                            <div class="bg-zhezhao"></div>
+                            <!-- 删除 -->
+                            <div class="del-div">
+                                <p>
+                                    该用户将不能再使用该设备
+                                    <br>是否确认要解除分享?
+                                </p>
+                                <div class="del-sure">
+                                    <a href="myShare.html">再想想</a><span>|</span>
+                                    <a share_uid="" id="delShare" onclick="delShareUser()" href="javascript:void(0)">解除</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

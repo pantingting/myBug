@@ -1,0 +1,80 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>我的</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/03-1-my.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/params.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/my.js"></script>
+</head>
+<body>
+    <div class="page__bd height-100 bg-img">
+        <div class="weui-tab height-100">
+            <div class="weui-tab__panel login-backImg" style="padding: 16px 0 20px 0">
+
+                <div class="personal-center">
+                    <a onclick="location.href='index.html?timestamp=' + (new Date()).getTime()"><img src="../img/000a.png" alt=""></a>
+                </div>
+
+                <div class="portrait">
+                    <a onclick="location.href='myInfo.html?timestamp=' + (new Date()).getTime()"><img src="" alt=""></a>
+                    <span>用户名</span>
+                </div>
+
+                <div class="mydevice">
+                    <div class="nav-header">
+                        <a onclick="location.href='myDevice.html?timestamp=' + (new Date()).getTime()">
+                            <img src="../img/022.png" alt="">
+                            <span>我的设备</span>
+                        </a>
+                    </div>
+
+                    <div class="device-info">
+                        <p class="deviceName">MyBug1号设备</p>
+                        <p class="deviceMac">
+                            <span>12345678</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="repair-records">
+                    <div class="nav-header">
+                        <a onclick="location.href='myRepairRecords.html?timestamp=' + (new Date()).getTime()">
+                            <img src="../img/023.png" alt="">
+                            <span>报修记录</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="other">
+                    <ul>
+                        <li class="nav-header">
+                            <a onclick="location.href='myUseRecords.html?timestamp=' + (new Date()).getTime()">
+                                <img src="../img/025.png" alt="">
+                                <span>使用记录</span>
+                            </a>
+                        </li>
+                        <li class="nav-header">
+                            <a onclick="location.href='myAdvice.html?timestamp=' + (new Date()).getTime()">
+                                <img src="../img/026.png" alt="">
+                                <span>意见反馈</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

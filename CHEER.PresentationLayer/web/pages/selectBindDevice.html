@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>绑定设备</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/params.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+</head>
+<style>
+	.weui-cell__bd{height: 55px;}
+	.no-state{line-height: 55px;}
+</style>
+<body>
+    <div class="container height-100">
+        <div class="page height-100">
+            <div class="page__bd height-100">
+                <div class="weui-tab height-100">
+                    <div class="weui-tab__panel" style="background-color: #eff5f5;">
+                        <div class="weui-cells">
+                            <a class="weui-cell weui-cell_access device-list" href="javascript:;" onclick="selectDevice(this)">
+                                <div class="weui-cell__bd">
+                                    <p>MyBugwifi1111</p>
+                                    <p class="state">已连接</p>
+                                </div>
+                                <div>
+                                    <img src="../img/006.png" alt="">
+                                </div>
+                            </a>
+                            <a class="weui-cell weui-cell_access device-list" href="javascript:;" onclick="selectDevice(this)">
+                                <div class="weui-cell__bd no-state">
+                                    <p>MyBugwifi1234</p>
+                                    
+                                </div>
+                                <div>
+                                    <img src="../img/006.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dialogs">
+        <div class="js_dialog" id="iosDialog1">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__hd"><strong class="weui-dialog__title">MyBugwifi1234</strong></div>
+                <div class="weui-dialog__bd">
+                    <div class="web_ui_box center">
+                        <div class="web_ui_item">
+                            <input type="password" class="input-default" id="password" placeholder="密码">
+                        </div>
+                        <div>
+                            <img width="20px" style="vertical-align: middle;" onclick="displayPwd(this)" src="../img/007a.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-dialog__ft" style="margin-top: 20px;">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default" onclick="$('#dialogs').hide();$('.input-default').val('')">取 消</a>
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary connect-btn" onclick="connect()">连 接</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function() {
+        });
+
+        function selectDevice(self) {
+            $('#iosDialog1 .weui-dialog__title').text($(self).find('.weui-cell__bd p:first-child').text());
+            $('#dialogs').show();
+        }
+
+        function displayPwd(self) {
+            if ($(self).attr('src') == '../img/007.png') {
+                $('.input-default').attr('type', 'password');
+                $(self).attr('src', '../img/007a.png');
+            } else {
+                $('.input-default').attr('type', 'text');
+                $(self).attr('src', '../img/007.png');
+            }
+        }
+
+        function connect() {
+            if ($('#password').val().trim() == '') {
+                dialog.alert('提示', '密码不能为空！');
+                return;
+            }else if ($('#password').val().length < 6) {
+                dialog.alert('提示', '密码最少为6位！');
+                return;
+            }else{
+                location.href="index.html";
+            }
+        }
+        
+           $("#password").on('input',function(){
+             if(this.value.length>=6){
+                $("#dialogs .weui-dialog__btn_primary").css("color","#000");
+             }
+
+                
+            })
+    </script>
+</body>
+</html>
+   

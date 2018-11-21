@@ -1,0 +1,91 @@
+.weui-media-box__hd img {
+    width: 100%;
+}
+
+.weui-panel:first-child {
+    margin-top: 15px;
+}
+
+.bd-record {
+    width: 30%;
+}
+
+.bd-remove {
+    padding: 5px 0;
+    margin: 0 auto;
+    border: 1px solid #fda162;
+    color: #fda162;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.bd-remove:last-child {
+    margin-top: 5px;
+}
+
+.weui-cells:after {
+    border-bottom: 0;
+}
+
+/*03-10 遮罩层*/
+.bg-zhezhao {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: #797a7c;
+    opacity: 0.7;
+}
+
+/*删除*/
+.del-div {
+    width: 70%;
+    height: 150px;
+    background: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    text-align: center;
+    display: none;
+}
+
+    .del-div p {
+        padding: 25px 0;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .del-div .del-sure {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .del-div a {
+        width: 50%;
+        text-align: center;
+        line-height: 45px;
+        color: #f59a16;
+        font-size: 20px;
+    }
+
+    .del-div span {
+        color: #dcdcdc;
+        line-height: 45px;
+    }
+
+    .del-div a:last-child {
+        color: #6edd74;
+    }
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.weui-media-box__hd img {
+    border-radius: 50%;
+}

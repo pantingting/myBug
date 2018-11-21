@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>意见反馈</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+</head>
+<body>
+    <div class="container height-100">
+        <div class="page height-100">
+            <div class="page__bd height-100">
+                <div class="weui-tab height-100">
+                    <div class="weui-tab__panel p-t-15" style="background-color: #eff5f5;">
+                        <textarea class="input-default width-100 box-sizing p-15 text-size" data-name="feedback" rows="10" placeholder="请在此留下您宝贵反馈，我们会采纳哦 ~"></textarea>
+                        <div class="btn-submit btn-hover">确认提交</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.btn-submit').click(() => {
+            if ($('[data-name="feedback"]').val().trim() == '')  {
+                dialog.alert('提示', '请输入反馈意见！');
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

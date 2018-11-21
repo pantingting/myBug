@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>重置密码</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/params.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/resetPwd.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page">
+            <div class="page__bd bg-grey height-100" style="overflow: auto;">
+                <div>
+                    <div class="width-100 resetPwd-box">
+                        <div class="web_ui_box">
+                            <span>手机号：</span>
+                            <input class="web_ui_item input-default t-s-16" maxlength="11" type="tel" id="mobileNo">
+                        </div>
+
+                        <div class="web_ui_box align-item">
+                            <span>验证码：</span>
+                            <input class="web_ui_item input-default t-s-16" type="text" id="verificationCode" style="background-color: transparent;">
+                            <div class="text-center box-sizing t-s-16" style="margin-right:10px">
+                                <div id="get-code-btn" class="btn-hover" onclick="getCode();">
+                                    获取验证码
+                                </div>
+                            </div>
+                        </div>
+                        <div class="web_ui_box">
+                            <span>密码：</span>
+                            <input class="web_ui_item input-default t-s-16" type="password" id="pssword">
+                        </div>
+
+                        <div class="web_ui_box" style="border-bottom:none">
+                            <span>确认密码：</span>
+                            <input class="web_ui_item input-default t-s-16" type="password" id="againPwd">
+                        </div>
+                    </div>
+                    <div class="resetPwd-btn-box">
+                        <div class="btn-hover" id="btn-sure" onclick="modifyPwd();">
+                            完 成
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

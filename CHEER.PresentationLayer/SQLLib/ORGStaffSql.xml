@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SQLStringContainer>
+	<ORGStaffSave>insert ORGStaff(OID,StaffNO,StaffName) values(@OUID,@StaffNO,@StaffName)</ORGStaffSave>
+	<ORGStaffUpdate>update ORGStaff set OID=@OID,StaffNO=@StaffNO,StaffName=@StaffName where OID=@OID</ORGStaffUpdate>
+	<mysample2>SELECT FROM dbo.SECUser INNER JOIN  dbo.SECRoleUserMap ON dbo.SECUser.UserID = dbo.SECRoleUserMap.UserID where dbo.SECUser.UserID=@UID</mysample2>
+</SQLStringContainer>

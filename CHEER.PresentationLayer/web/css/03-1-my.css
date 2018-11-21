@@ -1,0 +1,29 @@
+    .portrait{width: 120px;margin:0 auto;margin-top: 50px;}
+    .portrait img{width: 100%;}
+    .portrait span{display: block; color: #fff;margin: 15px 0;}
+    .mydevice{background: #fff;
+        width: 90%;height: 140px; 
+        margin:0 auto;text-align: left;
+        border-radius: 10px;}
+    .nav-header{padding: 10px 0;position: relative;}
+    .nav-header img{width: 30px;position: absolute;left: 10px;top:50%;transform: translateY(-50%);}
+    .nav-header span{line-height: 30px;margin-left: 50px;}
+    .device-info{width: 90%; background: #f3f2f7;margin:0 auto;margin-top: 5px;padding: 15px;}
+    .device-info p{font-size: 14px; }
+    .device-info p:last-child{color:#427aa9;font-size: 14px; }
+    .device-info p:last-child a{float:right;margin-right:5px; 
+        color: #f1b061;}
+    .repair-records,.other{background: #fff;width: 90%; 
+        margin:0 auto;text-align: left;border-radius: 10px; margin-top:20px;}
+    .other ul li{list-style: none;
+        border-bottom: 1px solid #dcdcdc;}
+    .other ul li:last-child{border-bottom: 0;}
+    a{color: #000;}
+
+    .nav-header a {
+        display: block;
+    }
+
+.portrait img {
+    border-radius: 50%;
+}

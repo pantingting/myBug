@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>我的设备</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/03-5-mydevice.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="../js/params.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/myDevice.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page">
+            <div class="bg-grey height-100" style="overflow: auto;">
+                    <ul class="list">
+                        <li>
+                            <div class="device-info">
+                                <input type="text" readonly value="MyBug1号设备">
+                                <span>设备号:</span>
+                                <span class="list-id">0553chuyitang00154</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- 遮罩层 -->
+                    <div class="bg-zhezhao"></div>
+                    <!-- 分享 -->
+                    <img class="share-img" src="../img/029.png" alt="">
+                    <!-- 删除 -->
+                    <div class="del-div">
+                        <p>删除设备即可解绑该设备!<br>是否确认要删除此设备?
+                        </p>
+                        <div class="del-sure">
+                            <a onclick="$('.bg-zhezhao').hide();$('.del-div').hide();">再想想</a><span>|</span>
+                            <a class="enabledel" onclick="Del()">确定删除</a>
+                        </div>                
+                        
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

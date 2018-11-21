@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>意见反馈</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/myAdvice.js"></script>
+</head>
+<style>
+    span.btn {
+        display: block;
+        width: 90%;
+        height: 40px;
+        background: #1766ab;
+        color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 40px;
+        margin: 30px auto;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px 0 0 10px;
+        height: 150px;
+        border: 0;
+        resize: none;
+        outline: none;
+        box-sizing: border-box;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="page">
+            <div class="bg-grey height-100">
+                <textarea class="advice" placeholder="请在此留下您宝贵的反馈，我们会采纳哦~"></textarea>
+                <span class="btn" onclick="Advice()">确认提交</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>基本资料</title>
+    <link rel="stylesheet" href="../lib/weui/weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/03-3-info.css">
+    <script src="../lib/jquery/jquery.min.js"></script>
+    <script src="../js/loading.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script src="../js/myInfo.js"></script>
+    <style>
+        input {
+            outline: none;
+        }
+        .btn-out {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0154a3;
+            padding: 12px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .list img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--    <div class="container"> -->
+    <div class="page">
+        <div class="bg-grey height-100" style="overflow: auto;">
+            <ul class="list">
+                <li>
+                    头像:  <span><img class="headImage" src="" alt=""></span>
+                </li>
+                <li>
+                    昵称: <input type="text" class="nickName" value="" readonly="readonly">
+                </li>
+                <li>
+                    账号: <input type="text" class="loginName" value="" readonly="readonly">
+                </li>
+                <li>
+                    地址: <input type="text" class="address" readonly="readonly" value="">
+                </li>
+            </ul>
+
+            <div class="btn-out" onclick="singOut()">退 出 登 录</div>
+        </div>
+    </div>
+    <!--  </div> -->
+</body>
+</html>

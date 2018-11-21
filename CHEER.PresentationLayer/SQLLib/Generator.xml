@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SQLStringContainer>
+	<InsertTimeCardData><![CDATA[insert into atdtimecarddata (personid,timecarddate,timecardtime,receivedate,machineid) select personid,@timeCardDate,@timeCardTime,@receiveDate,@machineID from PSNACCOUNT where cardnum=@CardNum]]></InsertTimeCardData>
+</SQLStringContainer>

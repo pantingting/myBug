@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<SQLStringContainer>
+	<ePortal.GetCategoryByHit>
+		select sum(portalarticle.hit) as hit,P.categoryid,P.categoryname,P.uniqueenumber from portalcategory join portalcategory P on portalcategory.uniqueenumber like P.uniqueenumber + '%' and P.parentid='111111' and P.showpositioin=@showposition join portalarticle on portalarticle.categoryid=portalcategory.categoryid group by P.categoryid,P.categoryname,P.uniqueenumber order by hit desc
+	</ePortal.GetCategoryByHit>
+	<ePortal.GetCategoryByHitForOracle>
+		select sum(portalarticle.hit) as hit,P.categoryid,P.categoryname,P.uniqueenumber from portalcategory join portalcategory P on portalcategory.uniqueenumber like P.uniqueenumber || '%' and P.parentid='111111' and P.showpositioin=@showposition join portalarticle on portalarticle.categoryid=portalcategory.categoryid group by P.categoryid,P.categoryname,P.uniqueenumber order by hit desc
+	</ePortal.GetCategoryByHitForOracle>
+	<ePortal.ArticleQuery>
+		select portalarticle.* from portalarticle join portalcategory C on C.categoryid=portalarticle.categoryid join portalcategory P on C.uniqueenumber like P.uniqueenumber + '%' and P.categoryid=@categoryid where portalarticle.checkstate=1 and portalarticle.title like '%' + @title + '%' and (portalarticle.summery like '%' + @content + '%' or portalarticle.content like '%' + @content + '%') and portalarticle.authornick like '%' + @authornick + '%' and (portalarticle.postdate &gt;=@datef and portalarticle.postdate &lt;=@datet) order by portalarticle.lastupdatetime desc
+	</ePortal.ArticleQuery>
+	<ePortal.ArticleQueryForOracle>
+		select portalarticle.* from portalarticle join portalcategory C on C.categoryid=portalarticle.categoryid join portalcategory P on C.uniqueenumber like P.uniqueenumber || '%' and P.categoryid=@categoryid where portalarticle.checkstate=1 and portalarticle.title like '%' || @title || '%' and (portalarticle.summery like '%' || @content || '%' or portalarticle.content like '%' || @content || '%') and portalarticle.authornick like '%' || @authornick || '%' and (portalarticle.postdate &gt;=@datef and portalarticle.postdate &lt;=@datet) order by portalarticle.lastupdatetime desc
+	</ePortal.ArticleQueryForOracle>
+	<ePortal.UpdateBLOBFile>Update PORTALARTICLE Set CONTENT = @CONTENT Where ARTID = @ARTID</ePortal.UpdateBLOBFile>
+
+	<ePortal.InsertIMG>Insert Into PORTALIMG (IMGID,IMGPATH,IMGWIDTH,IMGHEIGHT,IMGFORMATE,IMGVALUE) VALUES (@IMGID,@IMGPATH,@IMGWIDTH,@IMGHEIGHT,@IMGFORMATE,@IMGVALUE)</ePortal.InsertIMG>
+
+</SQLStringContainer>
